@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.slider1{
+    background-image: url('../public/slider1.jpg');
+}
+.slider2{
+    background-image: url('../public/slider2.jpg');
+}
+.slider3{
+    background-image: url('../public/slider3.jpg');
+}
+.swiper-button-prev{
+    display: hidden;
+}
+
+/* #6a9955 */
+/* #EFCF4F */
