@@ -15,6 +15,7 @@ const Populars = () => {
         .then(data => setPopulars(data))
     },[])
     // console.log(populars);
+    const popularClasses = populars.filter(popular => popular.category === 'popular')
 
     return (
         <>
@@ -24,7 +25,7 @@ const Populars = () => {
         </div>
         <div className='p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
             {
-                populars.map(popular => 
+                popularClasses.map(popular => 
                 <div data-aos="flip-up" key={popular.id} className="card w-96 bg-base-100 shadow-xl">
                 <figure><img src={popular.image} alt="Shoes" /></figure>
                 <div className="card-body">
