@@ -8,7 +8,7 @@
         "availableSeats": 10,
         "instructorName": "John Smith",
         "price": "150",
-        "students": "60",
+        "students": "70",
         "courseTime": "2 months"
     },
     {
@@ -32,7 +32,7 @@
         "availableSeats": 12,
         "instructorName": "Michael Davis",
         "price": "100",
-        "students": "59",
+        "students": "68",
         "courseTime": "1.5 months"
     },
     {
@@ -44,7 +44,7 @@
         "availableSeats": 6,
         "instructorName": "Sarah Thompson",
         "price": "180",
-        "students": "63",
+        "students": "65",
         "courseTime": "2.5 months"
     },
     {
@@ -56,7 +56,7 @@
         "availableSeats": 10,
         "instructorName": "David Miller",
         "price": "140",
-        "students": "60",
+        "students": "63",
         "courseTime": "2 months"
     },
     {
@@ -68,7 +68,7 @@
         "availableSeats": 15,
         "instructorName": "Jennifer Brown",
         "price": "160",
-        "students": "65",
+        "students": "60",
         "courseTime": "2.5 months"
     }
 ]
