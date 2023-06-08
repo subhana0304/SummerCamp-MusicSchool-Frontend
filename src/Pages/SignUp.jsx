@@ -77,7 +77,7 @@ const SignUp = () => {
                             {errors.password?.type === 'minLength' && <span className='text-red-600'>Password must be 6 characters </span>}
                             {errors.password?.type === 'pattern' && <span className='text-red-600'>Password must be a capital letter and a special characters like !,$,#,@,* </span>}
                         </div>
-                        <input type="submit" className='btn bg-[#EFCF4F]' value="Sign Up" />
+                        <input type="submit" className='btn bg-[#6a9955]' value="Sign Up" />
                     </form>
                     <div className='mx-auto'>
                         <button className='btn btn-outline'><FaGoogle></FaGoogle> SignIn with Google</button>

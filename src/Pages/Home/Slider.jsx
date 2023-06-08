@@ -34,7 +34,7 @@ const Slider = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-semibold text-white">Music is your world</h1>
                                 <p className="mb-5 text-white">Don't miss chance</p>
-                                <button className="btn bg-[#EFCF4F] rounded text-white border-0">Start Learning</button>
+                                <button className="btn bg-[#6a9955] rounded text-white border-0">Start Learning</button>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ const Slider = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-semibold text-white">Music for everyone</h1>
                                 <p className="mb-5 text-white">Awaken Possibility</p>
-                                <button className="btn bg-[#EFCF4F] rounded text-white border-0">Start Learning</button>
+                                <button className="btn bg-[#6a9955] rounded text-white border-0">Start Learning</button>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ const Slider = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-semibold text-white">Start with a note</h1>
                                 <p className="mb-5 text-white">Don't miss chance</p>
-                                <button className="btn bg-[#EFCF4F] rounded text-white border-0">Start Learning</button>
+                                <button className="btn bg-[#6a9955] rounded text-white border-0">Start Learning</button>
                             </div>
                         </div>
                     </div>

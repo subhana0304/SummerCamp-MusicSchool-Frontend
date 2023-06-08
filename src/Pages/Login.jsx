@@ -58,9 +58,9 @@ const Login = () => {
                                 </label>
                                 <input type="password" placeholder="password" {...register("password")} name='password' className="input input-bordered" />
                             </div>
-                            <input type="submit" className='btn bg-[#EFCF4F]' value="Login" />
+                            <input type="submit" className='btn bg-[#6a9955]' value="Login" />
                             <label className="label">
-                                    <span>Don't have an account? <Link to="/signUp" className='text-[#EFCF4F] link-hover'>Sign Up</Link></span>
+                                    <span>Don't have an account? <Link to="/signUp" className='text-[#6a9955] link-hover'>Sign Up</Link></span>
                                 </label>
                         </form>
                         <div className='mx-auto'>
