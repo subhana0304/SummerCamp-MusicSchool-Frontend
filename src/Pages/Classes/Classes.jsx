@@ -1,14 +1,59 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const Classes = () => {
     const [classes, setClasses] = useState([]);
-
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
     useEffect(() => {
-        fetch('popular.json')
+        fetch('http://localhost:5000/classes')
             .then(res => res.json())
             .then(data => setClasses(data))
     }, []);
+
+    const handleSelectedClass = item =>{
+        console.log(item);
+        if(user && user.email){
+            const selectedClass = {itemId: item._id, name: item.name, image: item.image, shortDescription:item.shortDescription, description:item.description, availableSeats:item.availableSeats, instructorName: item.instructorName, price:item.price, students:item.students, courseTime:item.courseTime, category:item.category, email: user.email}
+            fetch('http://localhost:5000/carts', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(selectedClass)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.insertedId){
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your class has been Selected',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+            })
+        }
+        else{
+            Swal.fire({
+                title: 'Please login to selected the class',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Login now!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  navigate('/login', {state: {from: location}})
+                }
+              })
+        }
+    }
+
     return (
         <div>
             <Helmet>
@@ -22,7 +67,7 @@ const Classes = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5 p-10'>
                     {
                         classes.map(item =>
-                            <div key={item.id} className="card w-full bg-base-100 shadow-xl">
+                            <div key={item._id} className="card w-full bg-base-100 shadow-xl">
                                 <figure className="px-10 pt-10">
                                     <img src={item.image} alt="Shoes" className="rounded-xl h-full" />
                                 </figure>
@@ -34,7 +79,7 @@ const Classes = () => {
                                     <p>Price: ${item.price}</p>
                                     </div>
                                     <div className="card-actions justify-center">
-                                        <button className="btn bg-[#6a9955] text-white">Select</button>
+                                        <button onClick={()=>handleSelectedClass(item)}  className="btn bg-[#6a9955] text-white">Select</button>
                                     </div>
                                 </div>
                             </div>

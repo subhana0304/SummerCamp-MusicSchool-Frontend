@@ -10,7 +10,7 @@ const Populars = () => {
   },[]);
 
     useEffect(()=>{
-        fetch('popular.json')
+        fetch('http://localhost:5000/classes')
         .then(res => res.json())
         .then(data => setPopulars(data))
     },[])
@@ -26,7 +26,7 @@ const Populars = () => {
         <div className='p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
             {
                 popularClasses.map(popular => 
-                <div data-aos="flip-up" key={popular.id} className="card w-96 bg-base-100 shadow-xl">
+                <div data-aos="flip-up" key={popular._id} className="card w-96 bg-base-100 shadow-xl">
                 <figure><img src={popular.image} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title text-2xl font-semibold">{popular.name}</h2>

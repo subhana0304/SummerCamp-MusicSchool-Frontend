@@ -11,7 +11,7 @@ const Instructors = () => {
     },[])
 
     useEffect(() => {
-        fetch('instructors.json')
+        fetch('http://localhost:5000/instructors')
             .then(res => res.json())
             .then(data => setInstructors(data))
     }, [])
@@ -28,7 +28,7 @@ const Instructors = () => {
             <div className='p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
                 {
                     populars.map(popular =>
-                        <div data-aos="fade-up" key={popular.id} className='mx-auto justify-center'>
+                        <div data-aos="fade-up" key={popular._id} className='mx-auto justify-center'>
                             <img className='rounded-full w-[250px] h-[250px] p-3 border border-[#6a9955] hover:border-8 hover:p-1 duration-75' src={popular.image} alt="" />
                             <h3 className='text-2xl font-bold mt-5'>{popular.name}</h3>
                             <h5 className='text-xl'>{popular.instrument}</h5>
