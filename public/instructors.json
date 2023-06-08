@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "John Smith",
+      "instrument": "Piano Instructor",
+      "image": "https://i.ibb.co/L5n6z2y/team-3-370x370.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Emily Johnson",
+      "instrument": "Guitar Instructor",
+      "image": "https://i.ibb.co/gmvWbpY/w2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Michael Davis",
+      "instrument": "Violin Instructor",
+      "image": "https://i.ibb.co/rvFfs2T/team-2-370x370.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Thompson",
+      "instrument": "Flute Instructor",
+      "image": "https://i.ibb.co/HpLn2q6/w1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "David Wilson",
+      "instrument": "Drums Instructor",
+      "image": "https://i.ibb.co/vx2PbM9/m1.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Jessica Miller",
+      "instrument": "Saxophone Instructor",
+      "image": "https://i.ibb.co/bz8B315/w3.jpg"
+    }
+  ]
+  

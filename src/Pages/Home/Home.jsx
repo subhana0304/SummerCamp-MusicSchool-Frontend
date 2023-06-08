@@ -3,6 +3,7 @@ import Slider from './Slider';
 import { Helmet } from 'react-helmet';
 import Populars from './Populars';
 import Arts from './Arts';
+import Instructors from './Instructors';
 
 const Home = () => {
     return (
@@ -13,7 +14,7 @@ const Home = () => {
             <Slider></Slider>
             <Populars></Populars>
             <Arts></Arts>
-            <h1>Hello from home</h1>
+            <Instructors></Instructors>
         </div>
     );
 };

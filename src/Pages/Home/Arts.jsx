@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Arts = () => {
     return (
@@ -9,7 +10,7 @@ const Arts = () => {
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-semibold text-white">---Let's make art---</h1>
                         <p className="mb-5 text-white">Bring your life to a trial lesson to find out how much <br /> it enjoy doing music or singing</p>
-                        <button className="btn bg-[#6a9955] border-0 text-white">Get Started</button>
+                        <button className="btn bg-[#6a9955] border-0 text-white"><Link to='/classes'>Let's Started</Link></button>
                     </div>
                 </div>
             </div>

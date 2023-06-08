@@ -14,7 +14,7 @@ const Populars = () => {
         <>
         <div className='text-center mt-10'>
             <h3 className='text-3xl font-semibold text-[#6a9955]'>---Popular Classes---</h3>
-            <p>Explore several art forms as your child builds creativity and <br /> confidence in our new visual arts classes for all ages</p>
+            <p>Explore several art forms as your lifr builds creativity and <br /> confidence in our new visual arts classes for all ages</p>
         </div>
         <div className='p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
             {
