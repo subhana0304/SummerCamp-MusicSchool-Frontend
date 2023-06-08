@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Populars from './Populars';
 import Arts from './Arts';
 import Instructors from './Instructors';
+import Gallery from './Gallery';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Populars></Populars>
             <Arts></Arts>
             <Instructors></Instructors>
+            <Gallery></Gallery>
         </div>
     );
 };

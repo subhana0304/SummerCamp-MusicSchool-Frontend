@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const Instructors = () => {
     const [instructors, setInstructors] = useState([]);
+
+    useEffect(()=>{
+        Aos.init({duration:3000});
+    },[])
 
     useEffect(() => {
         fetch('instructors.json')
@@ -20,7 +26,7 @@ const Instructors = () => {
             <div className='p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 '>
                 {
                     instructors.map(instructor =>
-                        <div key={instructor.id} className='mx-auto justify-center'>
+                        <div data-aos="fade-up" key={instructor.id} className='mx-auto justify-center'>
                             <img className='rounded-full w-[250px] h-[250px] p-3 border border-[#6a9955] hover:border-8 hover:p-1 duration-75' src={instructor.image} alt="" />
                             <h3 className='text-2xl font-bold mt-5'>{instructor.name}</h3>
                             <h5 className='text-xl'>{instructor.instrument}</h5>
