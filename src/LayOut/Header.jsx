@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Header = () => {
@@ -11,10 +11,10 @@ const Header = () => {
             .catch(error => console.log(error))
     }
     const navItem = <>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/instructors">Instructors</Link></li>
-        <li><Link to="/classes">Classes</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/instructors">Instructors</NavLink></li>
+        <li><NavLink to="/classes">Classes</NavLink></li>
+        <li><NavLink to="/dashboard/myCart">Dashboard</NavLink></li>
         {
             user ?
                 <>
@@ -22,7 +22,7 @@ const Header = () => {
                     <li><button onClick={handleLogout} className='btn bg-[#6a9955] pt-4 text-white border-0'>LogOut</button></li>
                 </>
                 : <>
-                    <li><Link to="/login">Login</Link></li>
+                    <li><NavLink to="/login">Login</NavLink></li>
                 </>
         }
     </>

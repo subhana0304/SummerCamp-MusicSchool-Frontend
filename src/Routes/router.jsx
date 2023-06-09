@@ -12,6 +12,8 @@ import PrivateRoute from './PrivateRoute';
 import Instructors from '../Pages/Home/Instructors';
 import Classes from '../Pages/Classes/Classes';
 import InstructorPages from '../Pages/Instructors/InstructorPages';
+import MyCart from '../LayOut/DashBoard/MyCart';
+import MyEnroll from '../LayOut/DashBoard/MyEnroll';
 
   const router = createBrowserRouter([
     {
@@ -41,8 +43,18 @@ import InstructorPages from '../Pages/Instructors/InstructorPages';
       ]
     },
     {
-        path: "/dashboard",
+        path: "dashboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+          {
+            path: 'myCart',
+            element: <MyCart></MyCart>
+          },
+          {
+            path: 'myEnroll',
+            element: <MyEnroll></MyEnroll>
+          }
+        ]
     },
     {
       path: '*',
