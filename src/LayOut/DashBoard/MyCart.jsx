@@ -2,19 +2,50 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import UseCarts from '../../Hook/UseCarts';
 import { FaTrash } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const MyCart = () => {
-    const [cart] = UseCarts();
-    const totalPrice = cart.reduce((sum, item) => item.price + sum, 0)
+    const [cart, refetch] = UseCarts();
+    const totalPrice = cart.reduce((sum, item) => item.price + sum, 0);
+
+    const handleDelete = (item) =>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/carts/${item._id}`,{
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    if(data.deletedCount > 0){
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                          )
+                    }
+                })
+            }
+          })
+    }
+
     return (
-        <div>
+        <div className='w-full'>
             <Helmet>
                 <title>SummerCamp || MyCart</title>
             </Helmet>
-            <div className='uppercase font-semibold my-5 flex justify-between h-[60px] items-center'>
+            <div className='uppercase font-semibold my-5 flex justify-evenly h-[60px] items-center'>
                 <h1 className='text-xl'>Total Items: {cart.length}</h1>
                 <h1 className='text-xl'>Total Price: ${totalPrice}</h1>
-                <button className='btn bg-[#6a9955] text-white'>Pay</button>
+                <button className='btn bg-[#6a9955] text-white btn-sm'>Pay</button>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -49,7 +80,7 @@ const MyCart = () => {
                                 <td>${item.price}</td>
                                 <td className='text-center'>{item.students}</td>
                                 <td>
-                                    <button className="btn bg-red-600 text-white"><FaTrash></FaTrash></button>
+                                    <button onClick={()=>handleDelete(item)} className="btn bg-red-600 text-white"><FaTrash></FaTrash></button>
                                 </td>
                             </tr>
                             )

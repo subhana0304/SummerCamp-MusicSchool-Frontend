@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaBook, FaHome, FaShoppingCart, FaUser, FaWallet } from 'react-icons/fa';
+import { FaBook, FaHome, FaMoneyBill, FaShoppingCart, FaUser, FaWallet } from 'react-icons/fa';
 
 const Dashboard = () => {
     return (
@@ -23,6 +23,7 @@ const Dashboard = () => {
                         {/* Sidebar content here */}
                         <li><NavLink to="/dashboard/myCart"><FaShoppingCart></FaShoppingCart> My Selected Classes</NavLink></li>
                         <li><NavLink to="/dashboard/myEnroll"><FaWallet></FaWallet> My Enrolled Classes</NavLink></li>
+                        <li><NavLink to="/dashboard/payment"><FaMoneyBill></FaMoneyBill> Payment History</NavLink></li>
                         <div className='divider'></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
                         <li><NavLink to="/instructors"><FaUser></FaUser> Instructors</NavLink></li>
