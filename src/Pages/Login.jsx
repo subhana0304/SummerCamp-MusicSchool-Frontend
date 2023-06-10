@@ -5,6 +5,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import Swal from 'sweetalert2';
+import GoogleLogin from '../Shared/GoogleLogin';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -63,9 +64,7 @@ const Login = () => {
                                     <span>Don't have an account? <Link to="/signUp" className='text-[#6a9955] link-hover'>Sign Up</Link></span>
                                 </label>
                         </form>
-                        <div className='mx-auto'>
-                            <button className='btn btn-outline'><FaGoogle></FaGoogle> SignIn with Google</button>
-                        </div>
+                        <GoogleLogin></GoogleLogin>
                     </div>
                 </div>
             </div>

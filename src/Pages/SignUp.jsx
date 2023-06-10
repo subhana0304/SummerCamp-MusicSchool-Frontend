@@ -5,6 +5,7 @@ import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import GoogleLogin from '../Shared/GoogleLogin';
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -94,9 +95,7 @@ const SignUp = () => {
                         </div>
                         <input type="submit" className='btn bg-[#6a9955]' value="Sign Up" />
                     </form>
-                    <div className='mx-auto'>
-                        <button className='btn btn-outline'><FaGoogle></FaGoogle> SignIn with Google</button>
-                    </div>
+                    <GoogleLogin></GoogleLogin>
                 </div>
             </div>
         </div>
