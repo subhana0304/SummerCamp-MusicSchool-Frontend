@@ -28,11 +28,11 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full">
                         {
-                            // isAdmin ? <>
-                            //     <li><NavLink to="/dashboard/manageClasses"><FaBook></FaBook> Manage Classes</NavLink></li>
-                            //     <li><NavLink to="/dashboard/manageUsers"><FaUser></FaUser> Manage Users</NavLink></li>
-                            //     <li><NavLink to="/dashboard/payment"><FaMoneyBill></FaMoneyBill> Payment History</NavLink></li>
-                            // </> 
+                            isAdmin ? <>
+                                <li><NavLink to="/dashboard/manageClasses"><FaBook></FaBook> Manage Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/manageUsers"><FaUser></FaUser> Manage Users</NavLink></li>
+                                <li><NavLink to="/dashboard/payment"><FaMoneyBill></FaMoneyBill> Payment History</NavLink></li>
+                            </> :
                             isInstructor ? <>
                             <li><NavLink to="/dashboard/addClasses"><FaBook></FaBook> Add Classes</NavLink></li>
                             <li><NavLink to="/dashboard/myClasses"><FaBook></FaBook> My Classes</NavLink></li>

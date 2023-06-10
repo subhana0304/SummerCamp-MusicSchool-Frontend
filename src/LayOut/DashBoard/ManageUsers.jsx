@@ -3,11 +3,13 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FaUser, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import UseAxiosSecure from '../../Hook/UseAxiosSecure';
 
 const ManageUsers = () => {
+    const [axiosSecure] = UseAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
     });
 
     const handleAdmin = user =>{
