@@ -14,7 +14,7 @@ const Header = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/instructors">Instructors</NavLink></li>
         <li><NavLink to="/classes">Classes</NavLink></li>
-        <li><NavLink to="/dashboard/myCart">Dashboard</NavLink></li>
+        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
         {
             user ?
                 <>

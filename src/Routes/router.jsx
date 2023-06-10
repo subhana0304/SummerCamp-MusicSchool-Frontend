@@ -14,6 +14,7 @@ import Classes from '../Pages/Classes/Classes';
 import InstructorPages from '../Pages/Instructors/InstructorPages';
 import MyCart from '../LayOut/DashBoard/MyCart';
 import MyEnroll from '../LayOut/DashBoard/MyEnroll';
+import ManageUsers from '../LayOut/DashBoard/ManageUsers';
 
   const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ import MyEnroll from '../LayOut/DashBoard/MyEnroll';
           {
             path: 'myEnroll',
             element: <MyEnroll></MyEnroll>
+          },
+          {
+            path: 'manageUsers',
+            element: <ManageUsers></ManageUsers>
           }
         ]
     },

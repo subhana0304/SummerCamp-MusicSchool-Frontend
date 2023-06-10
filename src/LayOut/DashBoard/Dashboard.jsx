@@ -4,6 +4,8 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { FaBook, FaHome, FaMoneyBill, FaShoppingCart, FaUser, FaWallet } from 'react-icons/fa';
 
 const Dashboard = () => {
+    // TODO: 
+    const isAdmin = true;
     return (
         <div>
             <Helmet>
@@ -20,10 +22,19 @@ const Dashboard = () => {
                 <div className="drawer-side bg-[#6a9955]">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full">
+                        {
+                            isAdmin ? <>
+                                <li><NavLink to="/dashboard/manageClasses"><FaBook></FaBook> Manage Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/manageUsers"><FaUser></FaUser> Manage Users</NavLink></li>
+                                <li><NavLink to="/dashboard/payment"><FaMoneyBill></FaMoneyBill> Payment History</NavLink></li>
+                            </> : <>
+                                <li><NavLink to="/dashboard/myCart"><FaShoppingCart></FaShoppingCart> My Selected Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/myEnroll"><FaWallet></FaWallet> My Enrolled Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/payment"><FaMoneyBill></FaMoneyBill> Payment History</NavLink></li>
+                            </>
+                        }
                         {/* Sidebar content here */}
-                        <li><NavLink to="/dashboard/myCart"><FaShoppingCart></FaShoppingCart> My Selected Classes</NavLink></li>
-                        <li><NavLink to="/dashboard/myEnroll"><FaWallet></FaWallet> My Enrolled Classes</NavLink></li>
-                        <li><NavLink to="/dashboard/payment"><FaMoneyBill></FaMoneyBill> Payment History</NavLink></li>
+
                         <div className='divider'></div>
                         <li><NavLink to="/"><FaHome></FaHome> Home</NavLink></li>
                         <li><NavLink to="/instructors"><FaUser></FaUser> Instructors</NavLink></li>
