@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 const UseInstructor = () => {
     const {user} = useContext(AuthContext);
    const [axiosSecure] = UseAxiosSecure();
-   const {data: isInstructor, isLoading: isAdminLoading} = useQuery({
+   const {data: isInstructor, isLoading: isInstructorLoading} = useQuery({
     queryKey: ['isInstructor', user?.email],
     queryFn: async () =>{
         const res = await axiosSecure.get(`/users/instructor/${user?.email}`);
@@ -15,7 +15,7 @@ const UseInstructor = () => {
         return res.data.admin;
     }
    })
-   return [isInstructor, isAdminLoading]
+   return [isInstructor, isInstructorLoading]
 };
 
 export default UseInstructor;

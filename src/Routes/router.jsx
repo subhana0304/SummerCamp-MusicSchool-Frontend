@@ -15,6 +15,11 @@ import InstructorPages from '../Pages/Instructors/InstructorPages';
 import MyCart from '../LayOut/DashBoard/MyCart';
 import MyEnroll from '../LayOut/DashBoard/MyEnroll';
 import ManageUsers from '../LayOut/DashBoard/ManageUsers';
+import AdminPrivateRoute from './AdminPrivateRoute';
+import ManageClasses from '../LayOut/DashBoard/ManageClasses';
+import AddClasses from '../LayOut/DashBoard/AddClasses';
+import InstructorPrivateRoute from './InstructorPrivateRoute';
+import MyClasses from '../LayOut/DashBoard/myClasses';
 
   const router = createBrowserRouter([
     {
@@ -57,7 +62,19 @@ import ManageUsers from '../LayOut/DashBoard/ManageUsers';
           },
           {
             path: 'manageUsers',
-            element: <ManageUsers></ManageUsers>
+            element: <AdminPrivateRoute><ManageUsers></ManageUsers></AdminPrivateRoute>
+          },
+          {
+            path: 'manageClasses',
+            element: <AdminPrivateRoute><ManageClasses></ManageClasses></AdminPrivateRoute>
+          },
+          {
+            path: 'addClasses',
+            element: <InstructorPrivateRoute><AddClasses></AddClasses></InstructorPrivateRoute>
+          },
+          {
+            path: 'myClasses',
+            element: <InstructorPrivateRoute><MyClasses></MyClasses></InstructorPrivateRoute>
           }
         ]
     },

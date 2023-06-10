@@ -2,20 +2,20 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
-import UseAdmin from '../Hook/UseAdmin';
+import UseInstructor from '../Hook/UseInstructor';
 
-const AdminPrivateRoute = ({children}) => {
+const InstructorPrivateRoute = ({children}) => {
     const {user, loading} = useContext(AuthContext);
-    const [isAdmin, isAdminLoading] = UseAdmin();
+    const [isInstructor, isInstructorLoading] = UseInstructor();
     const location = useLocation();
 
-    if(loading && isAdminLoading){
+    if(loading && isInstructorLoading){
         return <span className="loading loading-spinner loading-lg"></span>
     }
-    if(user && isAdmin){
+    if(user && isInstructor){
         return children;
     }
     return <Navigate to="/login" state={{from: location}} replace></Navigate>
 };
 
-export default AdminPrivateRoute;
+export default InstructorPrivateRoute;
