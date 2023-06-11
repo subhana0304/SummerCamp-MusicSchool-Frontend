@@ -54,7 +54,7 @@ const AddClasses = () => {
                 <title>SummerCamp || AddClass</title>
             </Helmet>
             <div>
-                <h3 className='text-3xl text-[#6a9955] py-5'>Add a Classes</h3>
+                <h3 className='text-3xl text-[#6a9955] font-semibold py-5'>Add a Classes</h3>
                 
                 <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='grid md:grid-cols-2 gap-5'>

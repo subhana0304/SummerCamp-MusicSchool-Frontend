@@ -1,9 +1,13 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import UseAdmin from '../Hook/UseAdmin';
+import UseInstructor from '../Hook/UseInstructor';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [isAdmin] = UseAdmin();
+    const [isInstructor] = UseInstructor();
     // console.log(user?.photoURL);
     const handleLogout = () => {
         logOut()
@@ -17,7 +21,12 @@ const Header = () => {
         {
             user ?
                 <>
-                    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+                    {   isAdmin ?
+                        <li><NavLink to="/dashboard/manageUsers">Dashboard</NavLink></li> : 
+                        isInstructor ? 
+                        <li><NavLink to="/dashboard/addClasses">Dashboard</NavLink></li> :
+                        <li><NavLink to="/dashboard/myCart">Dashboard</NavLink></li>
+                    }
                     <img className='w-[40px] h-[40px] rounded-full z-50 me-5' src={user?.photoURL} alt="" />
                     <li><button onClick={handleLogout} className='btn bg-[#6a9955] pt-4 text-white border-0'>LogOut</button></li>
                 </>
