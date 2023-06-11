@@ -9,7 +9,6 @@ import Login from '../Pages/Login';
 import SignUp from '../Pages/SignUp';
 import Dashboard from '../LayOut/DashBoard/Dashboard';
 import PrivateRoute from './PrivateRoute';
-import Instructors from '../Pages/Home/Instructors';
 import Classes from '../Pages/Classes/Classes';
 import InstructorPages from '../Pages/Instructors/InstructorPages';
 import MyCart from '../LayOut/DashBoard/MyCart';
@@ -19,7 +18,8 @@ import AdminPrivateRoute from './AdminPrivateRoute';
 import ManageClasses from '../LayOut/DashBoard/ManageClasses';
 import AddClasses from '../LayOut/DashBoard/AddClasses';
 import InstructorPrivateRoute from './InstructorPrivateRoute';
-import MyClasses from '../LayOut/DashBoard/myClasses';
+import Payment from '../LayOut/DashBoard/Payment';
+import MyClasses from '../LayOut/DashBoard/MyClasses';
 
   const router = createBrowserRouter([
     {
@@ -59,6 +59,10 @@ import MyClasses from '../LayOut/DashBoard/myClasses';
           {
             path: 'myEnroll',
             element: <MyEnroll></MyEnroll>
+          },
+          {
+            path: 'payment',
+            element: <Payment></Payment>
           },
           {
             path: 'manageUsers',

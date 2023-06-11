@@ -1,6 +1,7 @@
 import React from 'react';
 import UseClasses from '../../Hook/UseClasses';
 import { Helmet } from 'react-helmet';
+import { FaEdit } from 'react-icons/fa';
 
 const MyClasses = () => {
     const [classes, refetch] = UseClasses();
@@ -22,6 +23,7 @@ const MyClasses = () => {
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Action</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -44,6 +46,9 @@ const MyClasses = () => {
                                         <td>${item.price}</td>
                                         <td>
                                             pending
+                                        </td>
+                                        <td>
+                                            <button onClick={() => handleDelete(item)} className="btn bg-[#6a9955] text-white"><FaEdit></FaEdit></button>
                                         </td>
                                     </tr>
                                 )
