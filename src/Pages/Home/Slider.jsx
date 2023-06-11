@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay,  Navigation } from 'swiper';
+import { Link } from 'react-router-dom';
 
 const Slider = () => {
     const progressContent = useRef(null);
@@ -34,7 +35,7 @@ const Slider = () => {
                             <div className="max-w-md">
                                 <h1 className="mb-5 text-5xl font-semibold text-white">Music is your world</h1>
                                 <p className="mb-5 text-white">Don't miss chance</p>
-                                <button className="btn bg-[#6a9955] rounded text-white border-0">Start Learning</button>
+                                <button className="btn bg-[#6a9955] rounded text-white border-0"><Link to="/classes">Start Learning</Link></button>
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ const AdminPrivateRoute = ({children}) => {
     const [isAdmin, isAdminLoading] = UseAdmin();
     const location = useLocation();
 
-    if(loading && isAdminLoading){
+    if(loading || isAdminLoading){
         return <span className="loading loading-spinner loading-lg"></span>
     }
     if(user && isAdmin){

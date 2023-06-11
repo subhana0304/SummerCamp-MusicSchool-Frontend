@@ -9,7 +9,7 @@ const InstructorPrivateRoute = ({children}) => {
     const [isInstructor, isInstructorLoading] = UseInstructor();
     const location = useLocation();
 
-    if(loading && isInstructorLoading){
+    if(loading || isInstructorLoading){
         return <span className="loading loading-spinner loading-lg"></span>
     }
     if(user && isInstructor){
