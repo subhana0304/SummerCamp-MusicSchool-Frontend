@@ -9,7 +9,7 @@ const UseClasses = () => {
     const { refetch, data: classes = [] } = useQuery({
         queryKey: ['classes', user?.email],
         queryFn: async () =>{
-            const res = await fetch(`http://localhost:5000/instructor-class?email=${user?.email}`,{
+            const res = await fetch(`https://summer-camp-server-green.vercel.app/instructor-class?email=${user?.email}`,{
                 headers: {
                     authorization: `bearer ${token}`
                 }

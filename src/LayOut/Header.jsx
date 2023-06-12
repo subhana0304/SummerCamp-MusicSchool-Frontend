@@ -1,19 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import UseAdmin from '../Hook/UseAdmin';
 import UseInstructor from '../Hook/UseInstructor';
+import { useState } from 'react';
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const [isAdmin] = UseAdmin();
     const [isInstructor] = UseInstructor();
+    const [isDarkMode, setIsDarkMode] = useState(() => false);
+
+    useEffect(() => {
+        if (isDarkMode) {
+          document.body.style.backgroundColor = "black";
+          document.body.style.color = "gray";
+        } else {
+          document.body.style.backgroundColor = "white";
+          document.body.style.color = "black";
+        }
+      }, [isDarkMode]);
+
     // console.log(user?.photoURL);
     const handleLogout = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error))
     }
+
     const navItem = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/instructors">Instructors</NavLink></li>
@@ -54,6 +69,14 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1">
                     {navItem}
                 </ul>
+            </div>
+            <div>
+            <DarkModeToggle
+      onChange={setIsDarkMode}
+      checked={isDarkMode}
+      size={60}
+      className='h-full'
+    />
             </div>
         </div>
     );

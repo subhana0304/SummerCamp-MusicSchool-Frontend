@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
-import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Providers/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
@@ -32,7 +31,7 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoUrl)
                     .then(() => {
                         const saveUser = { name: data.name, email: data.email }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://summer-camp-server-green.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -67,10 +66,10 @@ const SignUp = () => {
             </Helmet>
             <div className="hero min-h-screen pt-12">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="md:w-1/2 lg:text-left">
-                        <img src="../../public/login.jpg" alt="" />
+                <div className="">
+                        <img className='w-full text-center' src="https://i.ibb.co/LnTW2s8/273-2738790-login-login-logo-hd-png-download-removebg-preview.png" alt="" />
                     </div>
-                    <div className="card mx-10 md:w-1/2 bg-base-100">
+                    <div className="card mx-10 md:w-1/2 bg-base-100 py-10">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
