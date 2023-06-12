@@ -2,6 +2,7 @@ import React from 'react';
 import UseClasses from '../../Hook/UseClasses';
 import { Helmet } from 'react-helmet';
 import { FaEdit } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const MyClasses = () => {
     const [classes, refetch] = UseClasses();
@@ -48,7 +49,7 @@ const MyClasses = () => {
                                             pending
                                         </td>
                                         <td>
-                                            <button onClick={() => handleDelete(item)} className="btn bg-[#6a9955] text-white"><FaEdit></FaEdit></button>
+                                            <button onClick={() => handleDelete(item)} className="btn bg-[#6a9955] text-white"><Link to={`/dashboard/editClass/${item._id}`}><FaEdit></FaEdit></Link></button>
                                         </td>
                                     </tr>
                                 )

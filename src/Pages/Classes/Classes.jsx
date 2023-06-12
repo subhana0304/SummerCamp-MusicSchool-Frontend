@@ -53,6 +53,9 @@ const Classes = () => {
               })
         }
     }
+    const handleViewClass = () => {
+        Swal.fire('You Have to Login to select class');
+    }
 
     return (
         <div>
@@ -79,7 +82,12 @@ const Classes = () => {
                                     <p>Price: ${item.price}</p>
                                     </div>
                                     <div className="card-actions justify-center">
-                                        <button onClick={()=>handleSelectedClass(item)}  className="btn bg-[#6a9955] text-white">Select</button>
+                                        {
+                                            user ? 
+                                            <button onClick={()=>handleSelectedClass(item)}  className="btn bg-[#6a9955] text-white">Select</button>
+                                            :
+                                            <button onClick={()=>handleViewClass(item)}  className="btn bg-[#6a9955] text-white">Select</button>
+                                        }
                                     </div>
                                 </div>
                             </div>

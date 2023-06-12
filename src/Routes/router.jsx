@@ -20,6 +20,7 @@ import AddClasses from '../LayOut/DashBoard/AddClasses';
 import InstructorPrivateRoute from './InstructorPrivateRoute';
 import Payment from '../LayOut/DashBoard/Payment';
 import MyClasses from '../LayOut/DashBoard/MyClasses';
+import EditClasses from '../LayOut/DashBoard/EditClasses';
 
   const router = createBrowserRouter([
     {
@@ -75,6 +76,11 @@ import MyClasses from '../LayOut/DashBoard/MyClasses';
           {
             path: 'addClasses',
             element: <InstructorPrivateRoute><AddClasses></AddClasses></InstructorPrivateRoute>
+          },
+          {
+            path: 'editClass/:id',
+            element: <EditClasses></EditClasses>,
+            loader: ({params}) => fetch(`http://localhost:5000/instructor-class/${params.id}`)
           },
           {
             path: 'myClasses',
