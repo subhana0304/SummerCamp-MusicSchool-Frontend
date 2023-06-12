@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaBook, FaHome, FaMoneyBill, FaShoppingCart, FaUser, FaWallet } from 'react-icons/fa';
+import { FaBook, FaCalendarCheck, FaCheckSquare, FaFirstdraft, FaHome,  FaItunes,  FaMusic, FaUser } from 'react-icons/fa';
 import UseAdmin from '../../Hook/UseAdmin';
 import UseInstructor from '../../Hook/UseInstructor';
 
@@ -30,15 +30,15 @@ const Dashboard = () => {
                         {
                             isAdmin ? <>
                                 <li><NavLink to="/dashboard/manageUsers"><FaUser></FaUser> Manage Users</NavLink></li>
-                                <li><NavLink to="/dashboard/manageClasses"><FaBook></FaBook> Manage Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/manageClasses"><FaItunes></FaItunes> Manage Classes</NavLink></li>
                             </> :
                             isInstructor ? <>
-                            <li><NavLink to="/dashboard/addClasses"><FaBook></FaBook> Add Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/myClasses"><FaBook></FaBook> My Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/addClasses"><FaMusic></FaMusic> Add Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/myClasses"><FaFirstdraft></FaFirstdraft> My Classes</NavLink></li>
                         </> :
                              <>
-                            <li><NavLink to="/dashboard/myCart"><FaShoppingCart></FaShoppingCart> My Selected Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/myEnroll"><FaWallet></FaWallet> My Enrolled Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/myCart"><FaCheckSquare></FaCheckSquare> My Selected Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/myEnroll"><FaCalendarCheck></FaCalendarCheck> My Enrolled Classes</NavLink></li>
                         </>
                         }
                         {/* Sidebar content here */}

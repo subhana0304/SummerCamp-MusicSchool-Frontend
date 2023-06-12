@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Flip } from 'react-awesome-reveal';
 import { Helmet } from 'react-helmet';
 
 const InstructorPages = () => {
@@ -16,10 +17,12 @@ const InstructorPages = () => {
                 <title>SummerCamp || Instructors</title>
             </Helmet>
             <div className='py-20'>
-                <div className='text-center mt-10'>
-                    <h3 className='text-3xl font-semibold text-[#6a9955]'>---Our Instructors---</h3>
-                    <p>Explore several art forms as your life builds creativity and <br /> confidence in our new visual arts classes for all ages</p>
-                </div>
+                <Flip>
+                    <div className='text-center mt-10'>
+                        <h3 className='text-3xl font-semibold text-[#6a9955]'>---Our Instructors---</h3>
+                        <p>Explore several art forms as your life builds creativity and <br /> confidence in our new visual arts classes for all ages</p>
+                    </div>
+                </Flip>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5 p-10 items-center'>
                     {
                         popularInstructors.map(popularInstructor =>
