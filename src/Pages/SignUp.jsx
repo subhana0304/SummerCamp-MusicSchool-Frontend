@@ -121,7 +121,7 @@ const SignUp = () => {
                                     <span className="text-red-600">Passwords do not match</span>
                                 )}
                             </div>
-                            <input type="submit" className='btn bg-[#6a9955]' value="Sign Up" />
+                            <input type="submit" className='btn bg-[#6a9955] text-white' value="Sign Up" />
                         </form>
                         <GoogleLogin></GoogleLogin>
                     </div>

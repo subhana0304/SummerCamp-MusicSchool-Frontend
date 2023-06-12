@@ -46,7 +46,7 @@ const MyClasses = () => {
                                         </td>
                                         <td>${item.price}</td>
                                         <td>
-                                            pending
+                                            {item.role ? item.role : 'Pending'}
                                         </td>
                                         <td>
                                             <button onClick={() => handleDelete(item)} className="btn bg-[#6a9955] text-white"><Link to={`/dashboard/editClass/${item._id}`}><FaEdit></FaEdit></Link></button>

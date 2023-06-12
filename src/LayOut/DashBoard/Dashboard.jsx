@@ -6,8 +6,7 @@ import UseAdmin from '../../Hook/UseAdmin';
 import UseInstructor from '../../Hook/UseInstructor';
 
 const Dashboard = () => {
-    // TODO: 
-    // const isAdmin = true;
+    
     const [isAdmin] = UseAdmin();
     const [isInstructor] = UseInstructor();
 
@@ -35,11 +34,11 @@ const Dashboard = () => {
                             isInstructor ? <>
                             <li><NavLink to="/dashboard/addClasses"><FaMusic></FaMusic> Add Classes</NavLink></li>
                             <li><NavLink to="/dashboard/myClasses"><FaFirstdraft></FaFirstdraft> My Classes</NavLink></li>
-                        </> :
+                        </> : 
                              <>
                             <li><NavLink to="/dashboard/myCart"><FaCheckSquare></FaCheckSquare> My Selected Classes</NavLink></li>
                             <li><NavLink to="/dashboard/myEnroll"><FaCalendarCheck></FaCalendarCheck> My Enrolled Classes</NavLink></li>
-                        </>
+                        </> 
                         }
                         {/* Sidebar content here */}
 

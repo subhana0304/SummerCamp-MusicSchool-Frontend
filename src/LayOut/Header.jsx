@@ -21,11 +21,11 @@ const Header = () => {
         {
             user ?
                 <>
-                    {   isAdmin ?
-                        <li><NavLink to="/dashboard/manageUsers">Dashboard</NavLink></li> : 
-                        isInstructor ? 
-                        <li><NavLink to="/dashboard/addClasses">Dashboard</NavLink></li> :
-                        <li><NavLink to="/dashboard/myCart">Dashboard</NavLink></li>
+                    {isAdmin ?
+                        <li><NavLink to="/dashboard/manageUsers">Dashboard</NavLink></li> :
+                        isInstructor ?
+                            <li><NavLink to="/dashboard/addClasses">Dashboard</NavLink></li> :
+                            <li><NavLink to="/dashboard/myCart">Dashboard</NavLink></li>
                     }
                     <img className='w-[40px] h-[40px] rounded-full z-50 me-5' src={user?.photoURL} alt="" />
                     <li><button onClick={handleLogout} className='btn bg-[#6a9955] pt-4 text-white border-0'>LogOut</button></li>
