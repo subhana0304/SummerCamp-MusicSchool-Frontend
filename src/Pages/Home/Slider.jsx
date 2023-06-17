@@ -26,7 +26,7 @@ const Slider = () => {
                 navigation={false}
                 modules={[Autoplay, Navigation]}
                 onAutoplayTimeLeft={onAutoplayTimeLeft}
-                className="mySwiper "
+                className="mySwiper w-full"
             >
                 <SwiperSlide className='text-white'>
                     <div className="hero slider1 min-h-screen" >

@@ -5,11 +5,12 @@ import Footer from './Footer';
 
 const Main = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden w-full">
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
+        // overflow-x-hidden w-full
     );
 };
 

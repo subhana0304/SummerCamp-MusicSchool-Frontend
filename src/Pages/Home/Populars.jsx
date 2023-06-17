@@ -29,7 +29,8 @@ const Populars = () => {
         <div className='p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
             {
                 popularClasses.map(popular => 
-                <div data-aos="flip-up" key={popular._id} className="card w-96 bg-base-100 shadow-xl">
+                <div key={popular._id}>
+                  <div data-aos="flip-up" className="card w-100 bg-base-100 shadow-xl">
                 <figure><img src={popular.image} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title text-2xl font-semibold">{popular.name}</h2>
@@ -45,6 +46,7 @@ const Populars = () => {
                   </div>
                 </div>
               </div>
+                </div>
               )
             }
         </div>
