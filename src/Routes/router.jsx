@@ -80,7 +80,7 @@ import EditClasses from '../LayOut/DashBoard/EditClasses';
           {
             path: 'editClass/:id',
             element: <EditClasses></EditClasses>,
-            loader: ({params}) => fetch(`https://summer-camp-server-green.vercel.app/instructor-class/${params.id}`)
+            loader: ({params}) => fetch(`http://localhost:5000/instructor-class/${params.id}`)
           },
           {
             path: 'myClasses',

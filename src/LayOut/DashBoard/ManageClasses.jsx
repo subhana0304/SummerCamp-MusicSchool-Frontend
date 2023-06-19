@@ -9,7 +9,7 @@ const ManageClasses = () => {
     const {user} = useContext(AuthContext);
 
     const handleApprove = item =>{
-        fetch(`https://summer-camp-server-green.vercel.app/classes/approve/${item._id}`, {
+        fetch(`http://localhost:5000/classes/approve/${item._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -29,7 +29,7 @@ const ManageClasses = () => {
     }
 
     const handleDeny = item =>{
-        fetch(`https://summer-camp-server-green.vercel.app/classes/deny/${item._id}`, {
+        fetch(`http://localhost:5000/classes/deny/${item._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

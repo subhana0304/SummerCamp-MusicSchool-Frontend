@@ -18,7 +18,7 @@ const EditClasses = () => {
 
                     const updateClasses = { name, price: parseFloat(price), category, instructorName, email, shortDescription, availableSeats: parseFloat(availableSeats), image }
                     console.log(updateClasses);
-                    fetch(`https://summer-camp-server-green.vercel.app/instructor-class/${_id}`, {
+                    fetch(`http://localhost:5000/instructor-class/${_id}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'
