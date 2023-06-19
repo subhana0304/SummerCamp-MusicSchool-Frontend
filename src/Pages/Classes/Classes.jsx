@@ -16,7 +16,7 @@ const Classes = () => {
     const [isInstructor] = UseInstructor();
 
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://summer-camp-server-green.vercel.app/classes')
             .then(res => res.json())
             .then(data => setClasses(data))
     }, []);
@@ -25,7 +25,7 @@ const Classes = () => {
         console.log(item);
         if(user && user.email){
             const selectedClass = {itemId: item._id, name: item.name, image: item.image, shortDescription:item.shortDescription, description:item.description, availableSeats:item.availableSeats, instructorName: item.instructorName, price:parseInt(item.price), students:item.students, courseTime:item.courseTime, category:item.category, email: user.email}
-            fetch('http://localhost:5000/carts', {
+            fetch('https://summer-camp-server-green.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
