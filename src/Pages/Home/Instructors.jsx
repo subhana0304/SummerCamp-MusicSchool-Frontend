@@ -11,6 +11,8 @@ const Instructors = () => {
         Aos.init({duration:3000});
     },[])
 
+    // ------------
+
     useEffect(() => {
         fetch('https://summer-camp-server-green.vercel.app/instructors')
             .then(res => res.json())
